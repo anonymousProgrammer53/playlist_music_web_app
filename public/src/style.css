@@ -217,13 +217,13 @@ video {
 /* font fraunces  */
 @font-face {
     font-family: 'Fraunces';
-    src: url('./../assets/font/Fraunces/Fraunces-VariableFont_SOFT\,WONK\,opsz\,wght.ttf');
+    src: url('./../assets/fonts/Fraunces/Fraunces-VariableFont_SOFT\,WONK\,opsz\,wght.ttf');
 }
 
 /* font fraunces italic*/
 @font-face {
     font-family: 'Fraunces-Italic';
-    src: url('./../assets/font/Fraunces/Fraunces-Italic-VariableFont_SOFT\,WONK\,opsz\,wght.ttf');
+    src: url('./../assets/fonts/Fraunces/Fraunces-Italic-VariableFont_SOFT\,WONK\,opsz\,wght.ttf');
 }
 
 /* END EXTRACT FONT FAMILY */
