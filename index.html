@@ -2,240 +2,1889 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- displays site properly based on user's device -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>playlist_music_web_app</title>
+    <!-- api soundcloud -->
+    <script src="https://w.soundcloud.com/player/api.js"></script>
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./public/assets/images/favicon-32x32.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        main>div {
+            height: 100vh;
+            overflow-y: scroll;
+        }
 
-  <title>Frontend Mentor | Sunnyside agency landing page</title>
+        main>div::-webkit-scrollbar {
+            display: none;
+        }
 
-  <link rel="stylesheet" href="./public/src/style.css">
+        iframe {
+            height: 100%;
+            user-select: none;
+            pointer-events: none;
+        }
+
+        @media (max-width: 864px) {
+            main>div {
+                height: auto;
+                overflow-y: auto;
+            }
+
+            #offcanvasResponsive {
+                width: 100%;
+            }
+
+            iframe {
+                height: 400px;
+            }
+        }
+    </style>
 </head>
 
-<body>
-  <header>
-    <nav class="bg-blue">
-      <div class="w-100 m-inline-auto p-block-4rem p-inline-2rem relative d-flex">
-        <section class="w-100 d-flex align-items-center">
-          <img src="./public/assets/images/logo.svg" class="w-30 w-50-672 w-100-672 d-block">
-        </section>
-        <ul
-          class="fs-20 text-white bg-very-dark-desaturated-blue-672 w-100 p-block-2rem-672 absolute-672 inset-block-start-25-672 inset-inline-0-672 z-index-10-672 d-none-672 d-flex flex-dir-col-672 align-items-center justify-content-center row-g-2rem-672 col-g-4rem cursor-pointer cursor-default-672">
-          <li>
-            <a
-              class="hover-text-very-dark-desaturated-blue hover-text-yellow-672 active-text-decoration-underline">Home</a>
-          </li>
-          <li>
-            <a
-              class="hover-text-very-dark-desaturated-blue hover-text-yellow-672 active-text-decoration-underline">About</a>
-          </li>
-          <li>
-            <a
-              class="hover-text-very-dark-desaturated-blue hover-text-yellow-672 active-text-decoration-underline">Services</a>
-          </li>
-          <li>
-            <a
-              class="hover-text-very-dark-desaturated-blue hover-text-yellow-672 active-text-decoration-underline">Project</a>
-          </li>
-          <li>
-            <button class="font-fraunces button">
-              CONTACT
-            </button>
-          </li>
-        </ul>
-        <section class="w-100 d-none d-flex-672 align-items-center justify-content-end">
-          <img src="./public/assets/images/icon-hamburger.svg" class="d-block">
-        </section>
-      </div>
-    </nav>
-    <section class="w-100 relative">
-      <picture>
-        <source media="(max-width: 672px)" srcset="./public/assets/images/mobile/image-header.jpg">
-        <img src="./public/assets/images/dekstop/image-header.jpg" class="w-100 h-100 d-block">
-      </picture>
-      <div class="text-center w-100 m-inline-auto p-block-2rem p-inline-2rem absolute inset-block-25 inset-inline-0">
-        <h1 class="font-fraunces text-white fs-56 fw-900 w-100">WE ARE CREATIFES</h1>
-        <img src="./public/assets/images/icon-arrow-down.svg" class="m-block-4rem m-inline-auto">
-      </div>
-    </section>
-  </header>
-  <main>
-    <article class="text-center-672 w-100 m-inline-auto d-flex flex-dir-col-672 align-items-center">
-      <section class="w-100 order-2-672">
-        <div class="p-block-2rem p-inline-2rem">
-          <h2 class="font-fraunces text-very-dark-desaturated-blue fs-36 fw-900 w-100 m-block-2rem">transform your brand
-          </h2>
-          <p class="m-block-2rem">We are a full-service creative agency specializing in helping brands grow fast. Engage
-            your clients through compelling visuals that do most of the marketing for you.</p>
-          <button class="m-block-4rem m-inline-auto-672 btn cursor-default-672">
-            <p class="font-fraunces fw-900 w-100">LEARN MORE</p>
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-              stroke="currentColor" stroke-width="4">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-            </svg>
-          </button>
-        </div>
-      </section>
-      <picture class="w-100">
-        <source media="(max-width: 672px)" srcset="./public/assets/images/mobile/image-transform.jpg">
-        <img src="./public/assets/images/dekstop/image-transform.jpg" class="w-100 d-block">
-      </picture>
-    </article>
-    <article class="text-center-672 w-100 m-inline-auto d-flex flex-dir-col-672 align-items-center">
-      <picture class="w-100">
-        <source media="(max-width: 672px)" srcset="./public/assets/images/mobile/image-stand-out.jpg">
-        <img src="./public/assets/images/dekstop/image-stand-out.jpg" class="w-100 d-block">
-      </picture>
-      <section class="w-100">
-        <div class="p-block-2rem p-inline-2rem">
-          <h2 class="font-fraunces text-very-dark-desaturated-blue fs-36 fw-900 w-100 m-block-2rem">stand out to the
-            right
-            audience</h2>
-          <p class="m-block-2rem">Using a collaborative formula of designers, researchers, photographers, videographers,
-            and copywriters, we’ll build and extend your brand in digital places.</p>
-          <button class="m-block-4rem m-inline-auto-672 btn cursor-default-672">
-            <p class="font-fraunces fw-900 w-100">LEARN MORE</p>
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-              stroke="currentColor" stroke-width="4">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-            </svg>
-          </button>
-        </div>
-      </section>
-    </article>
-    <article class="text-center w-100 m-inline-auto d-flex flex-dir-col-672 align-items-center">
-      <section class="w-100 relative">
-        <picture class="w-100">
-          <source media="(max-width: 960px)" srcset="./public/assets/images/mobile/image-graphic-design.jpg">
-          <img src="./public/assets/images/dekstop/image-graphic-design.jpg" class="w-100 d-block">
-        </picture>
-        <div class="w-90 m-inline-auto p-block-4rem p-inline-2rem absolute inset-block-55 inset-inline-0">
-          <h2 class="font-fraunces text-very-dark-desaturated-blue fs-28 fw-900 w-100 m-block-2rem">Graphic Design</h2>
-          <p class="m-block-2rem">Great design makes you memorable. We deliver artwork that underscores your brand
-            message and captures potential clients’ attention.</p>
-        </div>
-      </section>
-      <section class="w-100 relative">
-        <picture class="w-100">
-          <source media="(max-width: 960px)" srcset="./public/assets/images/mobile/image-photography.jpg">
-          <img src="./public/assets/images/dekstop/image-photography.jpg" class="w-100 d-block">
-        </picture>
-        <div class="w-90 m-inline-auto p-block-4rem p-inline-2rem absolute inset-block-55 inset-inline-0">
-          <h2 class="font-fraunces text-very-dark-desaturated-blue fs-28 fw-900 w-100 m-block-2rem">Photography</h2>
-          <p class="m-block-2rem">Increase your credibility by getting the most stunning, high-quality photos that
-            improve your business image.</p>
-        </div>
-      </section>
-    </article>
-    <article class="text-center w-100 m-inline-auto">
-      <div class="p-block-4rem p-inline-2rem">
-        <h2 class="font-fraunces text-very-dark-desaturated-blue fs-28 fw-900 w-100 m-block-4rem">CLIENT TESTIMONIAL
-        </h2>
-        <div class="d-flex flex-dir-col-672 row-g-4rem-672 align-items-start">
-          <section class="w-100">
-            <div class="w-90 m-inline-auto">
-              <img src="./public/assets/images/image-emily.jpg"
-                class="d-block m-block-2rem m-inline-auto w-20 border-radius-50">
-              <p class="m-block-4rem">We put our trust in Sunnyside and they delivered, making sure our needs were met
-                and deadlines were always hit.</p>
-              <div class="m-block-4rem">
-                <h2 class="font-fraunces text-very-dark-desaturated-blue fw-900">Emily R.</h2>
-                <p class="fs-16">Marketing Director</p>
-              </div>
+<body class="bg-black" data-bs-theme="dark">
+    <div id="app">
+        <nav class="navbar bg-black">
+            <div class="container">
+                <b class="navbar-brand text-body">playlist_music</b>
             </div>
-          </section>
-          <section class="w-100">
-            <div class="w-90 m-inline-auto">
-              <img src="./public/assets/images/image-thomas.jpg"
-                class="d-block m-block-2rem m-inline-auto w-20 border-radius-50">
-              <p class="m-block-4rem">Sunnyside’s enthusiasm coupled with their keen interest in our brand’s success
-                made it a satisfying and enjoyable experience.</p>
-              <div class="m-block-4rem">
-                <h2 class="font-fraunces text-very-dark-desaturated-blue fw-900">Thomas S.</h2>
-                <p class="fs-16">Chief Operating Officer</p>
-              </div>
+        </nav>
+        <main class="row g-0 mb-4 pb-4">
+            <div class="col-12 col-lg-5 ps-0 ps-lg-5 pe-0 pe-lg-3 mb-0 mb-lg-5">
+                <aside class="offcanvas-lg offcanvas-start bg-black" tabindex="-1" id="offcanvasResponsive"
+                    aria-labelledby="offcanvasResponsiveLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasResponsiveLabel">playlist_music</h5>
+                        <button style="font-size: 16px;" type="button" class="btn-close material-symbols-outlined"
+                            data-bs-dismiss="offcanvas" data-bs-target="#offcanvasResponsive"
+                            aria-label="Close"></button>
+                    </div>
+                </aside>
             </div>
-          </section>
-          <section class="w-100">
-            <div class="w-90 m-inline-auto">
-              <img src="./public/assets/images/image-jennie.jpg"
-                class="d-block m-block-2rem m-inline-auto w-20 border-radius-50">
-              <p class="m-block-4rem">Incredible end result! Our sales increased over 400% when we worked with
-                Sunnyside.Highly recommended!</p>
-              <div class="m-block-4rem">
-                <h2 class="font-fraunces text-very-dark-desaturated-blue fw-900">Jennie F.</h2>
-                <p class="fs-16">Business Owner</p>
-              </div>
+            <div class="col-12 col-lg-7 mt-0 mt-lg-4 pe-0 pe-lg-5 ps-0 ps-lg-3">
+                <div class="card w-100 bg-black rounded-0 border-0">
+                    <iframe width="100%" height="100" scrolling="no" frameborder="no" allow="autoplay" class="rounded-0"
+                        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/277739936&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true"></iframe>
+                    <div class="card-body mb-4">
+                        <h5 class="card-title"></h5>
+                        <h6 class="card-subtitle text-body-secondary"></h6>
+                    </div>
+                    <div class="card-body mb-3">
+                        <a href="" class="card-link d-block d-lg-none" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasResponsive" aria-controls="offcanvasResponsive">playlist_music</a>
+                        <span class="card-text text-body-secondary">di bikin oleh AA Warkop</span>
+                    </div>
+                </div>
             </div>
-          </section>
-        </div>
-      </div>
-    </article>
-    <article class="text-center-672 w-100 m-inline-auto d-flex flex-dir-col-672 align-items-center">
-      <picture class="w-100">
-        <source media="(max-width: 672px)" srcset="./public/assets/images/mobile/image-gallery-milkbottles.jpg">
-        <img src="./public/assets/images/dekstop/image-gallery-milkbottles.jpg" class="w-100 d-block">
-      </picture>
-      <picture class="w-100">
-        <source media="(max-width: 672px)" srcset="./public/assets/images/mobile/image-gallery-orange.jpg">
-        <img src="./public/assets/images/dekstop/image-gallery-orange.jpg" class="w-100 d-block">
-      </picture>
-      <picture class="w-100">
-        <source media="(max-width: 672px)" srcset="./public/assets/images/mobile/image-gallery-cone.jpg">
-        <img src="./public/assets/images/dekstop/image-gallery-cone.jpg" class="w-100 d-block">
-      </picture>
-      <picture class="w-100">
-        <source media="(max-width: 672px)" srcset="./public/assets/images/mobile/image-gallery-sugar-cubes.jpg">
-        <img src="./public/assets/images/dekstop/image-gallery-sugarcubes.jpg" class="w-100 d-block">
-      </picture>
-    </article>
-  </main>
-  <footer class="bg-very-dark-desaturated-blue">
-    <div class="text-center w-100 m-inline-auto p-block-4rem p-inline-2rem">
-      <section class="w-100 m-block-4rem m-block-end-1rem d-flex align-items-center justify-content-center">
-        <img src="./public/assets/images/logo.svg" class="w-30 d-block">
-      </section>
-      <ul
-        class="text-white w-100 d-flex align-items-center justify-content-center col-g-2rem cursor-pointer cursor-default-672">
-        <li>
-          <a class="hover-text-yellow active-text-decoration-underline">About</a>
-        </li>
-        <li>
-          <a class="hover-text-yellow active-text-decoration-underline">Services</a>
-        </li>
-        <li>
-          <a class="hover-text-yellow active-text-decoration-underline">Project</a>
-        </li>
-      </ul>
-      <ul
-        class="w-100 m-block-6rem d-flex align-items-center justify-content-center col-g-2rem cursor-pointer cursor-default-672">
-        <li>
-          <img src="./public/assets/images/icon-facebook.svg" class="d-block">
-        </li>
-        <li>
-          <img src="./public/assets/images/icon-instagram.svg" class="d-block">
-        </li>
-        <li>
-          <img src="./public/assets/images/icon-twitter.svg" class="d-block">
-        </li>
-        <li>
-          <img src="./public/assets/images/icon-pinterest.svg" class="d-block">
-        </li>
-      </ul>
-      <section class="w-100">
-        <p>challenges from <a href="https://www.frontendmentor.io/" target="_blank"
-            class="text-white hover-text-yellow active-text-decoration-underline cursor-default-672">frontend mentor
-            io</a></p>
-        <p>di bikin dengan penuh cinta dan kasih sayang, coding by <a
-            href="https://github.com/anonymousProgrammer53?tab=overview&from=2024-08-01&to=2024-08-08" target="_blank"
-            class="text-white hover-text-yellow active-text-decoration-underline cursor-default-672">anonymous
-            programmer</a>
-        </p>
-      </section>
+        </main>
+        <nav class="navbar fixed-bottom bg-black border-top">
+            <div class="container">
+                <ul class="nav justify-content-center align-items-center gap-4 w-100">
+                    <li class="nav-item p-1">
+                        <a id="bi-skip-backward-fill" class="nav-link link-body-emphasis btn link-opacity-75-hover p-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" fill="currentColor"
+                                class="bi bi-skip-backward-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M.5 3.5A.5.5 0 0 0 0 4v8a.5.5 0 0 0 1 0V8.753l6.267 3.636c.54.313 1.233-.066 1.233-.697v-2.94l6.267 3.636c.54.314 1.233-.065 1.233-.696V4.308c0-.63-.693-1.01-1.233-.696L8.5 7.248v-2.94c0-.63-.692-1.01-1.233-.696L1 7.248V4a.5.5 0 0 0-.5-.5" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="nav-item p-1">
+                        <a id="bi-rewind-fill" class="nav-link link-body-emphasis btn link-opacity-75-hover p-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" fill="currentColor"
+                                class="bi bi-rewind-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M8.404 7.304a.802.802 0 0 0 0 1.392l6.363 3.692c.52.302 1.233-.043 1.233-.696V4.308c0-.653-.713-.998-1.233-.696z" />
+                                <path
+                                    d="M.404 7.304a.802.802 0 0 0 0 1.392l6.363 3.692c.52.302 1.233-.043 1.233-.696V4.308c0-.653-.713-.998-1.233-.696z" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="nav-item p-1">
+                        <a id="bi-play-fill" class="nav-link link-body-emphasis btn link-opacity-75-hover p-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40px" height="40px" fill="currentColor"
+                                class="bi bi-play-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="nav-item p-1">
+                        <a id="bi-fast-forward-fill" class="nav-link link-body-emphasis btn link-opacity-75-hover p-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" fill="currentColor"
+                                class="bi bi-fast-forward-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M7.596 7.304a.802.802 0 0 1 0 1.392l-6.363 3.692C.713 12.69 0 12.345 0 11.692V4.308c0-.653.713-.998 1.233-.696z" />
+                                <path
+                                    d="M15.596 7.304a.802.802 0 0 1 0 1.392l-6.363 3.692C8.713 12.69 8 12.345 8 11.692V4.308c0-.653.713-.998 1.233-.696z" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="nav-item p-1">
+                        <a id="bi-skip-forward-fill" class="nav-link link-body-emphasis btn link-opacity-75-hover p-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" fill="currentColor"
+                                class="bi bi-skip-forward-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M15.5 3.5a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V8.753l-6.267 3.636c-.54.313-1.233-.066-1.233-.697v-2.94l-6.267 3.636C.693 12.703 0 12.324 0 11.693V4.308c0-.63.693-1.01 1.233-.696L7.5 7.248v-2.94c0-.63.693-1.01 1.233-.696L15 7.248V4a.5.5 0 0 1 .5-.5" />
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
     </div>
-  </footer>
-  <script src="./public/src/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script>
+        class Song {
+            constructor({ title, songSrc }) {
+                this.title = title;
+                this.songSrc = songSrc;
+            }
+        }
+
+        class Album {
+            constructor({ name, songs }) {
+                this.name = name;
+                this.songs = songs;
+            }
+        }
+
+        class Singer {
+            constructor({ name, albums }) {
+                this.name = name;
+                this.albums = albums;
+            }
+        }
+
+        class MusicData {
+            constructor() {
+                this.musikMancanegara = [];
+                this.musikIndonesia = [];
+                this.musikJepang = [];
+            }
+
+            addInternationalBand(singer) {
+                this.musikMancanegara.push(singer);
+            }
+
+            addIndonesianBand(singer) {
+                this.musikIndonesia.push(singer);
+            }
+
+            addJapaneseBand(singer) {
+                this.musikJepang.push(singer);
+            }
+        }
+
+        const nightmareSongFullAlbum = new Song({
+            title: "Nightmare Full Album",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/239146977&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const adaBandSongFullAlbum = new Song({
+            title: "[ Full Album ] 18 Lagu Pilihan Terbaik Ada Band & Naff - Lagu Pop Indonesia Terbaik",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1335600841&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const lebihIndahSong = new Song({
+            title: "Lebih Indah",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/43164651&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const matahariku = new Song({
+            title: "Matahariku",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/319692276&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const rindu = new Song({
+            title: "Rindu",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/27300376&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const sebuahRasa = new Song({
+            title: "Sebuah Rasa",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/279112910&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const coldplayYellow = new Song({
+            title: "Coldplay Yellow (cover) Feat Aral puppet",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1533388597&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const lestySayangBillar = new Song({
+            title: "Lesty Sayang Rizky Billar Aldi Taher Lestikejora Leslar Rizkybillar",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1373273920&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const pinjamDulu100 = new Song({
+            title: "Pinjam Dulu 100",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1742255496&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const ternyataCinta = new Song({
+            title: "Ternyata Cinta",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/12245368&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const kekasihTerhebat = new Song({
+            title: "Kekasih Terhebat",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/54582689&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const sempurna = new Song({
+            title: "Sempurna (Guitar Cover By Arf193) - YouTube",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/180578740&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const mainHati = new Song({
+            title: "Main Hati",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1083132556&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const ariLassoSongFullAlbum = new Song({
+            title: "Full Album",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/755282635&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const maduDanRacunSong = new Song({
+            title: "Madu dan Racun",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/76097065&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true"
+        });
+
+        const singkongDanKejuSong = new Song({
+            title: "Singkong dan Keju",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/284593163&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const kodokPunIkutMenyanyiSong = new Song({
+            title: "Kodokpun Ikut Menyanyi",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/265396474&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const bibirDanHatiSong = new Song({
+            title: "Bibir dan Hati",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/264518503&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const idaAyuKomang = new Song({
+            title: "Ida Ayu Komang",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/284593797&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const armadaSongFullAlbum = new Song({
+            title: "Full Album",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1284203986&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const berakhirlahSudah = new Song({
+            title: "Berakhirlah Sudah",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/229514949&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const bilaBenarSayang = new Song({
+            title: "Bila Benar Sayang",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/301002648&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const bernadyaSongFullAlbum = new Song({
+            title: "Full Album",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1903721789&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const akuDanDirimu = new Song({
+            title: "Aku dan Dirimu (Feat Ari Lasso)",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/164380086&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const kecewa = new Song({
+            title: "Kecewa",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/69387250&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const karenaKuCintaKau = new Song({
+            title: "Karena Ku Cinta Kau (Ost BCL) (Full Clean)",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/43070476&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const cintaSejati = new Song({
+            title: "Cinta Sejati (OST. Habibie & Ainun)",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/98661443&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const cintaJanganKauPergi = new Song({
+            title: "Cinta Jangan Kau Pergi (Official Music Video).mp3",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1098017842&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+
+        });
+
+        const dennyCaknanSongFullAlbum = new Song({
+            title: "FULL ALBUM TERBARU 2021 SPECIAL ANGEL",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1054115590&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+
+        });
+
+        const dewa19SongFullAlbum = new Song({
+            title: "Full Album",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1213054057&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+
+        });
+
+        const dewa19FtPamungkasSongFullAlbum = new Song({
+            title: "Full Album (ft Pamungkas)",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1103003092&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const dewa19FtVirzaSongFullAlbum = new Song({
+            title: "Full Album (ft Virza)",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1268629780&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const dhyoHawSongFullAlbum = new Song({
+            title: "Full Album",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/962154832&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const dmasivSongFullAlbum = new Song({
+            title: "Full Album",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1105709242&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const kesepianDygta = new Song({
+            title: "Kesepian",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/162839418&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const negaraLucu = new Song({
+            title: "Negara Lucu",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/538667559&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const felixIrwanSongFullAlbum = new Song({
+            title: "Full Album",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1710687048&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const geishaSongFullAlbum = new Song({
+            title: "Full Album",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1611164088&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const suara = new Song({
+            title: "Suara Ku Berharap",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1088789356&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const suaraFtAnggaCandra = new Song({
+            title: "Suara Ft. Angga Candra (KOLABORASI).mp3",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/919679962&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const cobalahFtAnggaCandra = new Song({
+            title: "Cobalah Ft. Angga Candra (KOLABORASI).mp3",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/919973692&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const remaja = new Song({
+            title: "Remaja",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/320899060&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true"
+        });
+
+        const siapkahKauTukJatuhCintaLagi = new Song({
+            title: "Siapkah Kau Tuk Jatuh Cinta Lagi",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/202272218&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true"
+        });
+
+        const iwanFalsSongFullAlbum = new Song({
+            title: "Full Album",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/337329213&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true"
+        });
+
+        const puisi = new Song({
+            title: "Puisi",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/237852996&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true"
+        });
+
+        const lepaskanDiriku = new Song({
+            title: "Lepaskan Diriku",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/37458938&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const laguJuicyLuicyFullAlbum = new Song({
+            title: "Full Album",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1689926139&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const tanpaTergesa = new Song({
+            title: "Tanpa Tergesa",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/552666681&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const mawarJingga = new Song({
+            title: "Mawar Jingga",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/586763991&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const tampar = new Song({
+            title: "Tampar Ft. Ziva Magnolya (Live Performance)",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1358059840&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const sialan = new Song({
+            title: "Sialan Feat. Adrian Khalif & Mahalini",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1769217528&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const itsOnlyMe = new Song({
+            title: "It's Only Me Official Lyric Video",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1140296692&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true"
+        });
+
+        const kitaPutus = new Song({
+            title: "Kita Putus",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/172783193&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true"
+        });
+
+        const tibaTibaCintaDatang = new Song({
+            title: "Tiba-tiba Cinta Datang",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/23408935&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true"
+        });
+
+        const untukApa = new Song({
+            title: "Untuk Apa",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/195371971&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true"
+
+        });
+
+        const perahUKertas = new Song({
+            title: "Perahu Kertas",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/56463260&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true"
+        });
+
+        const kamuDanKenangan = new Song({
+            title: "Kamu dan Kenangan",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/641051592&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true"
+        });
+
+        const ndxAkaSongFullAlbum = new Song({
+            title: "Full Album",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/780033318&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true"
+        });
+
+        const kuTetapMenanti = new Song({
+            title: "Ku Tetap Menanti",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/36586366&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true"
+        });
+
+        const feast = new Song({
+            title: "Feast",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1909478012&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true"
+        });
+
+        const peterpanfullAlbum20001Jam = new Song({
+            title: "Full Album Tahun 2000 1 jam",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/461832816&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const mimpiYangSempurna = new Song({
+            title: "Mimpi yang Sempurna",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/24186322&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const tamanLangitSongFullAlbum = new Song({
+            title: "Taman Langit Full Album",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/135613948&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const bintangDiSurgaSongFullAlbum = new Song({
+            title: "Bintang di Surga Full Album",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/828564151&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const ayah = new Song({
+            title: "Ayah (feat Candil Seurieus)",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/138683650&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const ostAlexandriaSongFullAlbum = new Song({
+            title: "Ost Alexanderia Full Album",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/90186076&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const hariYangCerahSongFullAlbum = new Song({
+            title: "Hari yang Cerah Full Album",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/99736578&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const sebuahNamaSebuahCeritaSongFullAlbum = new Song({
+            title: "Sebuah Nama Sebuah Cerita Full Album",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1503114916&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const sepertiSeharusnyaSongFullAlbum = new Song({
+            title: "Seperti Seharusnya Full Album",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/79359458&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const secondChangeSongFullAlbum = new Song({
+            title: "Second Change Full Album",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/76452159&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const singsLegendsSongFullAlbum = new Song({
+            title: "Sings Legends Full Album",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/277739936&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const keterkaitanKeterikatanSongFullAlbum = new Song({
+            title: "Keterkaitan Keterikatan Full Album",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/763582333&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const kalaCintaMenggoda = new Song({
+            title: "Kala Cinta Menggoda",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1203471892&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const tamanLangitNewVersionSongFullAlbum = new Song({
+            title: "Taman Langit (New Version) Full Album",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1364429008&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const hariYangCerahNewVersionSongFullAlbum = new Song({
+            title: "Hari yang Cerah (New Version) Full Album",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1385410078&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const onceSongFullAlbum = new Song({
+            title: "Full Album",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1116392089&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const tersimpan = new Song({
+            title: "Tersimpan",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/227771920&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const tungguApaLagi = new Song({
+            title: "Tunggu Apa Lagi POP ROCK Version by Reza Zulfikar.mp3",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1985160887&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const pamungkasSongFullAlbum = new Song({
+            title: "Full Album",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/878704099&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const oneOnly = new Song({
+            title: "One Only",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/653377505&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const kenanganManis = new Song({
+            title: "Kenangan Manis",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/669806600&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const monolog = new Song({
+            title: "Monolog",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/572563695&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const toTheBone = new Song({
+            title: "To the Bone",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1010766244&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const cintakanMembawamuPamungkas = new Song({
+            title: "Cinta kan membawamu",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1076862340&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const risalahHatiPamungkas = new Song({
+            title: "Risalah Hati",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1079366641&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const pupusPamungkas = new Song({
+            title: "Pupus",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1095369214&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const untukPerempuan = new Song({
+            title: "Untuk Perempuan Yang Sedang Di Pelukan",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/124007198&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const akad = new Song({
+            title: "Akad",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/331364170&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const playList1Song1 = new Song({
+            title: `LETTO, D'MASIV, PETERPAN [FULL ALBUM] LAGU POP INDONESIA TAHUN 2000an TERBAIK (128 Kbps)`,
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1117435531&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true"
+        });
+
+        const playList1Song2 = new Song({
+            title: `Lagu Pop Tahun 2000an HITS - D’BAGINDAS, FIVE MINUTES, DADALI, ST 12 - Band Indonesia Tahun 2000an`,
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1335602278&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true"
+        });
+
+        const playList2Song1 = new Song({
+            title: `lagu semangat kerja 2021 lagu pop indonesia terbaik terpopuler 2021`,
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1239796447&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true"
+        });
+
+        const playList2Song2 = new Song({
+            title: `LAGU POP TERBARU 2023 TIKTOK VIRAL TOP HITS SPOTIFY INDONESIA 2023 LAGU HITS 2023`,
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1545864958&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true"
+        });
+
+        const playList2Song3 = new Song({
+            title: `Mahalini - Ghea Indrawari - Juicy Luicy ♪ Spotify Top Hits Indonesia - Lagu Pop Terbaru 2024`,
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1757304825&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true"
+        });
+
+        const playList2Song4 = new Song({
+            title: `Kumpulan Lagu Galau Terbaik Indonesia Terbaru - Playlist Lagu Viral Spotify Tiktok`,
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1594558377&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true"
+        });
+
+        const playList2Song5 = new Song({
+            title: `Spotify TOP Hits Indonesia 2022 _ Lagu Indonesia Terbaru 2022 Viral TikTok by Izzasaleh01`,
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1297886668&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true"
+        });
+
+        const playList3Song1 = new Song({
+            title: `Kumpulan Lagu POP Indonesia Terbaru Lagu Baru Populer 2015`,
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/220260964&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true"
+        });
+
+        const playList3Song2 = new Song({
+            title: `Kompilasi Lagu Akustik Indonesia Terbaru 2018 Teman Bersantai`,
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/546604611&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true"
+        });
+
+        const terlaluCinta = new Song({
+            title: `Terlalu Cinta`,
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/260894243&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true"
+        });
+
+        const hatiYgKauSakiti = new Song({
+            title: `Hati yang Kau Sakiti`,
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/260887622&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true"
+        });
+
+        const takanBerpalingDarimu = new Song({
+            title: `Takan Berpaling Darimu`,
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/270601024&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true"
+        });
+
+        const ayatAyatCinta = new Song({
+            title: `Ayat ayat Cinta`,
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/17223116&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true"
+        });
+
+        const takSanggupLagi = new Song({
+            title: `Tak Sanggup Lagi`,
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/98196649&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true"
+        });
+
+        const hijrahCinta = new Song({
+            title: `Hijrah Cinta`,
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/147820750&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true"
+        });
+
+        const cintaDalamHidupku = new Song({
+            title: `Cinta Dalam Hidupku`,
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/307655799&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true"
+        });
+
+        const sandiwaraSemu = new Song({
+            title: `Sandiwara Semu`,
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/201851065&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true"
+        });
+
+        const dearGodVersiIndonesia = new Song({
+            title: `Dear god versi indonesia`,
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/96231803&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true"
+        });
+
+        const setiaBandSongFullAlbum = new Song({
+            title: `Lagu Pilihan Terbaik ST12 [ Full Album ] ( Setia Band ).mp3`,
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/446246436&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true"
+        });
+
+        const sevenTeenSongFullAlbum = new Song({
+            title: "Full Album",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/831948031&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const sheilaOn7SongFullAlbum = new Song({
+            title: "Full Album",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1445687479&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const lampuMerah = new Song({
+            title: "Lampu merah (speed up)",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1681584501&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+
+        const tipeXSongFullAlbum = new Song({
+            title: "Full Album",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/943136677&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const theChangcutersSongFullAlbum = new Song({
+            title: "Full Album",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/859477934&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const bungaMaafSong = new Song({
+            title: "Bunga Maaf",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1982465123&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const triadSongFullAlbum = new Song({
+            title: "Full Album",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1927453136&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const sedangInginBercinta = new Song({
+            title: "Sedang Ingin Bercinta",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/227606047&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const duaSejoli = new Song({
+            title: "Dua Sejoli",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/132213630&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const separuhNafas = new Song({
+            title: "Separuh Nafas",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/162611612&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const cintaGila = new Song({
+            title: "Cinta Gila Ost. Anak Jalanan",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/239675422&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const nengNengNongNeng = new Song({
+            title: "Neng Neng Nong Neng",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/46463147&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const vierraSongFullAlbum = new Song({
+            title: "Full Album",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/630621477&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const virgounAndLastChildSongFullAlbum = new Song({
+            title: "Full Album",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1144971799&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const akuYangJatuhCinta = new Song({
+            title: "Aku Yang Jatuh Cinta (Dudy Oris)",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/289010740&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const laksanaSurgaku = new Song({
+            title: "Laksana Surgaku (Dudy Oris)",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/115630815&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const merinduLagi = new Song({
+            title: "Merindu Lagi",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/46351864&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const malamMingguku = new Song({
+            title: "Malam Mingguku",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/68602373&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const diaMiliku = new Song({
+            title: "Dia Miliku (Eclat Cover)",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/583833846&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const menjagaHati = new Song({
+            title: "Menjaga Hati",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1089291205&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const tanpaCinta = new Song({
+            title: "Tanpa Cinta",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1256165179&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const janjiSuci = new Song({
+            title: "Janji Suci",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/358855721&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const sampaiAkhirWaktu = new Song({
+            title: "Sampai Akhir Waktu",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/289570359&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const mengejarMimpi = new Song({
+            title: "Mengejar Mimpi",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/501476916&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const manusiaBiasa = new Song({
+            title: "Manusia Biasa (CLB) (Speed Up)",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1462552279&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const aishiteru123 = new Song({
+            title: "Aishiteru 1, 2, 3",
+            songSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/238633622&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+        });
+
+        const avengedSevenfoldAlbum = new Album({
+            name: "Album Avenged Sevenfold",
+            songs: [dearGodVersiIndonesia]
+        });
+
+        const nightmare = new Album({
+            name: "Album Nightmare",
+            songs: [nightmareSongFullAlbum]
+        });
+
+        const adaBandFullAlbum = new Album({
+            name: "Full Album",
+            songs: [adaBandSongFullAlbum]
+        });
+
+        const lebihIndahAlbum = new Album({
+            name: "Album Lebih Indah",
+            songs: [lebihIndahSong]
+        });
+
+        const sacredlyAgnezious = new Album({
+            name: "Album Sacredly Agnezious",
+            songs: [matahariku]
+        });
+
+        const songToRemember = new Album({
+            name: "Album Song to Remember",
+            songs: [rindu]
+        });
+
+        const singleAgnezMo = new Album({
+            name: "Single",
+            songs: [sebuahRasa]
+        });
+
+        const singleAldiTaher = new Album({
+            name: "Single",
+            songs: [coldplayYellow, lestySayangBillar, pinjamDulu100]
+        });
+
+        const singleAndraAndTheBackBone = new Album({
+            name: "Single",
+            songs: [sempurna]
+        });
+
+        const season2 = new Album({
+            name: "Season 2",
+            songs: [mainHati]
+        });
+
+        const luarBiasa = new Album({
+            name: "Album Luar Biasa",
+            songs: [ternyataCinta, kekasihTerhebat]
+        });
+
+        const ariLassoFullAlbum = new Album({
+            name: "Full Album",
+            songs: [ariLassoSongFullAlbum]
+        })
+
+        const maduDanRacunAlbum = new Album({
+            name: "Album Madu dan Racun",
+            songs: [maduDanRacunSong]
+        });
+
+        const singkongDanKejuAlbum = new Album({
+            name: "Album Singkong dan Keju",
+            songs: [singkongDanKejuSong]
+        });
+
+        const kodokPunIkutMenyanyiAlbum = new Album({
+            name: "Album Kodokpun Ikut Menyanyi",
+            songs: [kodokPunIkutMenyanyiSong]
+        });
+
+        const bibirDanHatiAlbum = new Album({
+            name: "Album Bibir dan Hati",
+            songs: [bibirDanHatiSong]
+        });
+
+        const tawaDanAirMata = new Album({
+            name: "Album Tawa dan Air Mata",
+            songs: [idaAyuKomang]
+        });
+
+        const armadaFullAlbum = new Album({
+            name: "Full Album",
+            songs: [armadaSongFullAlbum]
+        });
+
+        const singleAtmosfera = new Album({
+            name: "Single",
+            songs: [berakhirlahSudah]
+        });
+
+        const sinarTerang = new Album({
+            name: "Album Sinar Terang",
+            songs: [bilaBenarSayang]
+        });
+
+        const bernadyaFullAlbum = new Album({
+            name: "Full Album",
+            songs: [bernadyaSongFullAlbum]
+        });
+
+        const tentangKamu = new Album({
+            name: "Album Tentang Kamu",
+            songs: [akuDanDirimu, kecewa]
+        });
+
+        const theBestOfBCL = new Album({
+            name: "Album The Best of Bunga Citra Lestari",
+            songs: [karenaKuCintaKau, cintaSejati]
+        });
+
+        const diSaatPatahHati = new Album({
+            name: "Album Disaat Patah Hati",
+            songs: [cintaJanganKauPergi]
+        });
+
+        const dennyCaknanFullAlbum = new Album({
+            name: "Full Album",
+            songs: [dennyCaknanSongFullAlbum]
+        });
+
+        const dewa19FullAlbum = new Album({
+            name: "Full Album",
+            songs: [dewa19SongFullAlbum, dewa19FtPamungkasSongFullAlbum, dewa19FtVirzaSongFullAlbum]
+        });
+
+        const dhyoHawFullAlbum = new Album({
+            name: "Full Album",
+            songs: [dhyoHawSongFullAlbum]
+        });
+
+        const dmasivFullAlbum = new Album({
+            name: "Full Album",
+            songs: [dmasivSongFullAlbum]
+        });
+
+        const bukanKekasihSetia = new Album({
+            name: "Bukan Kekasih Setia",
+            songs: [kesepianDygta]
+        });
+
+
+        const singleEnau = new Album({
+            name: "Single",
+            songs: [negaraLucu]
+        });
+
+        const felixIrwanFullAlbum = new Album({
+            name: "Full Album",
+            songs: [felixIrwanSongFullAlbum]
+        });
+
+        const ikutiCahaya = new Album({
+            name: "Album Ikuti Cahaya",
+            songs: [suara, suaraFtAnggaCandra, cobalahFtAnggaCandra]
+        });
+
+        const keretaKencan = new Album({
+            name: "Album Kereta Kencan",
+            songs: [remaja, siapkahKauTukJatuhCintaLagi]
+        });
+
+        const iwanFalsFullAlbum = new Album({
+            name: "Full Album",
+            songs: [iwanFalsSongFullAlbum]
+        });
+
+        const siang = new Album({
+            name: "Album Siang",
+            songs: [puisi]
+        });
+
+        const geishaFullAlbum = new Album({
+            name: "Full Album",
+            songs: [geishaSongFullAlbum]
+        });
+
+        const topengSahabat = new Album({
+            name: "Topeng Sahabat",
+            songs: [lepaskanDiriku]
+        });
+
+        const juicyLuicyFullAlbum = new Album({
+            name: "Full Album",
+            songs: [laguJuicyLuicyFullAlbum]
+        });
+
+        const sentimental = new Album({
+            name: "Album Sentimental",
+            songs: [tanpaTergesa, mawarJingga]
+        });
+
+        const nonfiksi = new Album({
+            name: "Album Nonfiksi",
+            songs: [tampar, sialan]
+        });
+
+
+        const melancholy = new Album({
+            name: "Album Melancholy",
+            songs: [itsOnlyMe]
+        });
+
+        const braniMusic = new Album({
+            name: "Album Brani Music",
+            songs: [kitaPutus]
+        });
+
+        const panggilAku = new Album({
+            name: "Album Panggil AKu",
+            songs: [tibaTibaCintaDatang]
+        });
+
+        const moments = new Album({
+            name: "Album Moments",
+            songs: [untukApa, perahUKertas]
+        });
+
+        const singleMaudyAyunda = new Album({
+            name: "Single",
+            songs: [kamuDanKenangan]
+        });
+
+        const singleNikitaWilly = new Album({
+            name: "Single",
+            songs: [kuTetapMenanti]
+        });
+
+        const ndxAkaFullAlbum = new Album({
+            name: "Full Album",
+            songs: [ndxAkaSongFullAlbum]
+        });
+
+        const kisah2002Malam = new Album({
+            name: "Album Kisah 2002 Malam",
+            songs: [peterpanfullAlbum20001Jam, mimpiYangSempurna]
+        });
+
+        const tamanLangit = new Album({
+            name: "Album Taman Langit",
+            songs: [tamanLangitSongFullAlbum]
+        });
+
+        const bintangDiSurga = new Album({
+            name: "Album Bintang di Surga",
+            songs: [bintangDiSurgaSongFullAlbum]
+        });
+
+        const dariHatiUntukAceh = new Album({
+            name: "Album Dari Hati Untuk Aceh",
+            songs: [ayah]
+        });
+
+        const ostAlexandria = new Album({
+            name: "Album Ost Alexandria",
+            songs: [ostAlexandriaSongFullAlbum]
+        });
+
+        const hariYangCerah = new Album({
+            name: "Album Hari yang Cerah",
+            songs: [hariYangCerahSongFullAlbum]
+        });
+
+        const sebuahNamaSebuahCerita = new Album({
+            name: "Album Sebuah Nama Sebuah Cerita",
+            songs: [sebuahNamaSebuahCeritaSongFullAlbum]
+        });
+
+        const sepertiSeharusnya = new Album({
+            name: "Album Seperti Seharusnya",
+            songs: [sepertiSeharusnyaSongFullAlbum]
+        });
+
+        const secondChange = new Album({
+            name: "Album Second Change",
+            songs: [secondChangeSongFullAlbum]
+        });
+
+        const singsLegends = new Album({
+            name: "Album Sings Legends",
+            songs: [singsLegendsSongFullAlbum]
+        });
+
+        const keterkaitanKeterikatan = new Album({
+            name: "Album Keterkaitan Keterikatan",
+            songs: [keterkaitanKeterikatanSongFullAlbum]
+        });
+
+        const puspaRagam = new Album({
+            name: "Album Puspa Ragam Karya Guruh Soekarno Putra 2020",
+            songs: [kalaCintaMenggoda]
+        });
+
+        const tamanLangitNewVersion = new Album({
+            name: "Album Taman Langit (New Version)",
+            songs: [tamanLangitNewVersionSongFullAlbum]
+        });
+
+        const hariYangCerahNewVersion = new Album({
+            name: "Album Hari yang Cerah (New Version)",
+            songs: [hariYangCerahNewVersionSongFullAlbum]
+        });
+
+        const membangunAndMenghancurkan = new Album({
+            name: "Album Membangun & Menghancurkan",
+            songs: [feast]
+        });
+
+        const onceFullAlbum = new Album({
+            name: "Full Album",
+            songs: [onceSongFullAlbum]
+        });
+
+        const singleOurStory = new Album({
+            name: "single",
+            songs: [tersimpan]
+        });
+
+        const singleNyomanPaul = new Album({
+            name: "single",
+            songs: [tungguApaLagi]
+        });
+
+        const pamungkasFullAlbum = new Album({
+            name: "Full Album",
+            songs: [pamungkasSongFullAlbum]
+        });
+
+        const walkTheTalk = new Album({
+            name: "Album Walk the Talk",
+            songs: [oneOnly, kenanganManis, monolog]
+        });
+
+        const flyingSolo = new Album({
+            name: "Album Flying Solo",
+            songs: [toTheBone]
+        });
+
+        const formatMasaDepanPamungkas = new Album({
+            name: "Album Format Masa Depan",
+            songs: [cintakanMembawamuPamungkas]
+        });
+
+        const bintangLimaPamungkas = new Album({
+            name: "Album Bintang Lima",
+            songs: [risalahHatiPamungkas]
+        });
+
+        const cintailahCintaPamungkas = new Album({
+            name: "Album Cintailah Cinta",
+            songs: [pupusPamungkas]
+        });
+
+        const duniaBatas = new Album({
+            name: "Album Dunia Batas",
+            songs: [untukPerempuan]
+        });
+
+        const ruangTunggu = new Album({
+            name: "Album Ruang Tunggu",
+            songs: [akad]
+        });
+
+        const playList1 = new Album({
+            name: "Playlist 1",
+            songs: [playList1Song1, playList1Song2]
+        });
+
+        const playList2 = new Album({
+            name: "Playlist 2",
+            songs: [playList2Song1, playList2Song2, playList2Song3, playList2Song4, playList2Song5]
+        });
+
+        const playList3 = new Album({
+            name: "Playlist 3",
+            songs: [playList3Song1, playList3Song2]
+        });
+
+        const yangTerpilih = new Album({
+            name: "Album Yang Terpilih",
+            songs: [terlaluCinta]
+        });
+
+        const rossaAlbum = new Album({
+            name: "Album Rossa",
+            songs: [hatiYgKauSakiti, takanBerpalingDarimu]
+        });
+
+        const theBestOfRossa = new Album({
+            name: "Album The Best Of Rossa",
+            songs: [ayatAyatCinta, takSanggupLagi]
+        });
+
+        const loveLifeAndMusic = new Album({
+            name: "Album Love, Life and Music",
+            songs: [hijrahCinta]
+        });
+
+        const aNewChapter = new Album({
+            name: "Album A New Chapter",
+            songs: [cintaDalamHidupku]
+        });
+
+        const plusImeless = new Album({
+            name: "Album +imeless",
+            songs: [sandiwaraSemu]
+        });
+
+        const setiaBandFullAlbum = new Album({
+            name: "Full Album",
+            songs: [setiaBandSongFullAlbum]
+        });
+
+
+        const sevenTeenFullAlbum = new Album({
+            name: "Full Album",
+            songs: [sevenTeenSongFullAlbum]
+        });
+
+        const sheilaOn7FullAlbum = new Album({
+            name: "Full Album",
+            songs: [sheilaOn7SongFullAlbum]
+        });
+
+        const pilot = new Album({
+            name: "Album Pilot",
+            songs: [lampuMerah]
+        });
+
+        const tipeXFullAlbum = new Album({
+            name: "Full Album",
+            songs: [tipeXSongFullAlbum]
+        });
+
+        const theChangcutersFullAlbum = new Album({
+            name: "Full Album",
+            songs: [theChangcutersSongFullAlbum]
+        });
+
+        const triadFullAlbum = new Album({
+            name: "Full Album",
+            songs: [triadSongFullAlbum]
+        });
+
+        const istimewa = new Album({
+            name: "Album Istimewa",
+            songs: [sedangInginBercinta, duaSejoli, separuhNafas, cintaGila, nengNengNongNeng]
+        });
+
+        const vierraFullAlbum = new Album({
+            name: "Full Album",
+            songs: [vierraSongFullAlbum]
+        });
+
+        const virgounAndLastChildFullAlbum = new Album({
+            name: "Full Album",
+            songs: [virgounAndLastChildSongFullAlbum]
+        });
+
+        const singleYovieAndNuno = new Album({
+            name: "Single",
+            songs: [merinduLagi, malamMingguku, diaMiliku, menjagaHati, tanpaCinta, janjiSuci, sampaiAkhirWaktu, manusiaBiasa, akuYangJatuhCinta, laksanaSurgaku]
+        });
+
+        const aishiteruAlbum = new Album({
+            name: "Album Aishiteru",
+            songs: [aishiteru123],
+        });
+
+        const a7x = new Singer({
+            name: "A7X",
+            albums: [nightmare]
+        });
+
+        const adaBand = new Singer({
+            name: "Ada Band",
+            albums: [adaBandFullAlbum]
+        });
+
+        const adera = new Singer({
+            name: "Adera",
+            albums: [lebihIndahAlbum]
+        });
+
+        const agnezMo = new Singer({
+            name: "Agnez Monica",
+            albums: [sacredlyAgnezious, songToRemember, singleAgnezMo]
+        });
+
+        const aldiTaher = new Singer({
+            name: "Aldi Taher",
+            albums: [singleAldiTaher]
+        });
+
+        const andraAndTheBackbone = new Singer({
+            name: "Andra and The Backbone",
+            albums: [singleAndraAndTheBackBone, season2]
+        });
+
+        const anji = new Singer({
+            name: "Anji",
+            albums: [luarBiasa]
+        });
+
+        const ariLasso = new Singer({
+            name: "Ari Lasso",
+            albums: [ariLassoFullAlbum]
+        });
+
+        const arieWibowo = new Singer({
+            name: "Arie Wibowo",
+            albums: [maduDanRacunAlbum, singkongDanKejuAlbum, kodokPunIkutMenyanyiAlbum, bibirDanHatiAlbum, tawaDanAirMata]
+        });
+
+        const armada = new Singer({
+            name: "Armada",
+            albums: [armadaFullAlbum]
+        });
+
+        const atmosfera = new Singer({
+            name: "Atmosfera",
+            albums: [singleAtmosfera]
+        });
+
+        const bagindas = new Singer({
+            name: "Bagindas",
+            albums: [sinarTerang]
+        });
+
+        const bernadya = new Singer({
+            name: "Bernadya",
+            albums: [bernadyaFullAlbum]
+        });
+
+        const bcl = new Singer({
+            name: "Bunga Citra Lestari",
+            albums: [tentangKamu, theBestOfBCL]
+        });
+
+        const dadali = new Singer({
+            name: "Dadali",
+            albums: [diSaatPatahHati]
+        });
+
+        const dennyCaknan = new Singer({
+            name: "Denny Caknan",
+            albums: [dennyCaknanFullAlbum]
+        });
+
+        const dewa19 = new Singer({
+            name: "Dewa 19",
+            albums: [dewa19FullAlbum]
+        });
+
+        const dhyoHaw = new Singer({
+            name: "Dhyo Haw",
+            albums: [dhyoHawFullAlbum]
+        });
+
+        const dmasiv = new Singer({
+            name: "D'Masiv",
+            albums: [dmasivFullAlbum]
+        });
+
+        const dygta = new Singer({
+            name: "Dygta",
+            albums: [bukanKekasihSetia]
+        });
+
+        const enau = new Singer({
+            name: "Enau",
+            albums: [singleEnau]
+        });
+
+        const felixIrwan = new Singer({
+            name: "Felix Irwan",
+            albums: [felixIrwanFullAlbum]
+        });
+
+        const geisha = new Singer({
+            name: "Geisha",
+            albums: [geishaFullAlbum]
+        });
+
+        const hijauDaun = new Singer({
+            name: "Hijau Daun",
+            albums: [ikutiCahaya]
+        });
+
+        const hivi = new Singer({
+            name: "Hivi",
+            albums: [keretaKencan]
+        });
+
+        const iwanFals = new Singer({
+            name: "Iwan Fals",
+            albums: [iwanFalsFullAlbum]
+        });
+
+        const jikustik = new Singer({
+            name: "Jikustik",
+            albums: [siang]
+        });
+
+        const jRocks = new Singer({
+            name: "J-Rocks",
+            albums: [topengSahabat]
+        });
+
+        const juicyLuicy = new Singer({
+            name: "Juicy Luicy",
+            albums: [juicyLuicyFullAlbum, sentimental, nonfiksi]
+        });
+
+        const kalebJ = new Singer({
+            name: "Kaleb J",
+            albums: [melancholy]
+        });
+
+        const lilO = new Singer({
+            name: "Lil O",
+            albums: [braniMusic]
+        })
+
+        const maudyAyunda = new Singer({
+            name: "Maudy Ayunda",
+            albums: [moments, panggilAku, singleMaudyAyunda]
+        });
+
+        const ndxAka = new Singer({
+            name: "Ndx Aka",
+            albums: [ndxAkaFullAlbum]
+        });
+
+        const nikitaWilly = new Singer({
+            name: "Nikita Willy",
+            albums: [singleNikitaWilly]
+        });
+
+        const nina = new Singer({
+            name: "Nina",
+            albums: [membangunAndMenghancurkan]
+        });
+
+        const noah = new Singer({
+            name: "Noah",
+            albums: [kisah2002Malam, tamanLangit, bintangDiSurga, dariHatiUntukAceh, ostAlexandria, hariYangCerah, sebuahNamaSebuahCerita, sepertiSeharusnya, secondChange, singsLegends, keterkaitanKeterikatan, puspaRagam, tamanLangitNewVersion, hariYangCerahNewVersion]
+        })
+
+        const once = new Singer({
+            name: "Once",
+            albums: [onceFullAlbum]
+        });
+
+        const ourStory = new Singer({
+            name: "Our Story",
+            albums: [singleOurStory]
+        });
+
+        const nyomanPaul = new Singer({
+            name: "Nyoman Paul",
+            albums: [singleNyomanPaul]
+        });
+
+        const pamungkas = new Singer({
+            name: "Pamungkas",
+            albums: [pamungkasFullAlbum, walkTheTalk, flyingSolo, formatMasaDepanPamungkas, bintangLimaPamungkas, cintailahCintaPamungkas]
+        });
+
+        const payungTeduh = new Singer({
+            name: "Payung Teduh",
+            albums: [duniaBatas, ruangTunggu]
+        });
+
+        const playList = new Singer({
+            name: "PLAYLIST",
+            albums: [playList1, playList2, playList3]
+        });
+
+        const rossa = new Singer({
+            name: "Rossa",
+            albums: [yangTerpilih, rossaAlbum, theBestOfRossa, loveLifeAndMusic, aNewChapter]
+        });
+
+        const rumahSakit = new Singer({
+            name: "Rumah Sakit",
+            albums: [plusImeless]
+        });
+
+        const ryanRapz = new Singer({
+            name: "Ryan Rapz",
+            albums: [avengedSevenfoldAlbum]
+        });
+
+        const setiaBand = new Singer({
+            name: "Setia Band",
+            albums: [setiaBandFullAlbum]
+        });
+
+        const sevenTeen = new Singer({
+            name: "Seventeen",
+            albums: [sevenTeenFullAlbum]
+        });
+
+        const sheilaOn7 = new Singer({
+            name: "Sheila On Seven",
+            albums: [sheilaOn7FullAlbum]
+        });
+
+        const theLantis = new Singer({
+            name: "The Lantis",
+            albums: [pilot]
+        });
+
+        const tipeX = new Singer({
+            name: "Tipe-X",
+            albums: [tipeXFullAlbum]
+        });
+
+        const theChangcuters = new Singer({
+            name: "The Cangcuters",
+            albums: [theChangcutersFullAlbum]
+        });
+
+        const triad = new Singer({
+            name: "Triad",
+            albums: [triadFullAlbum, istimewa]
+        });
+
+        const vierra = new Singer({
+            name: "Vierra",
+            albums: [vierraFullAlbum]
+        });
+
+        const virgounAndLastChild = new Singer({
+            name: "Virgoun & Last Child",
+            albums: [virgounAndLastChildFullAlbum]
+        });
+
+        const yovieAndNuno = new Singer({
+            name: "Yovie & Nuno",
+            albums: [singleYovieAndNuno]
+        });
+
+        const zivilia = new Singer({
+            name: "Zivilia",
+            albums: [aishiteruAlbum]
+        });
+
+        const musicData = new MusicData();
+        musicData.addInternationalBand(a7x);
+        musicData.addIndonesianBand(adaBand);
+        musicData.addIndonesianBand(adera);
+        musicData.addIndonesianBand(agnezMo);
+        musicData.addIndonesianBand(aldiTaher);
+        musicData.addIndonesianBand(anji);
+        musicData.addIndonesianBand(andraAndTheBackbone);
+        musicData.addIndonesianBand(ariLasso);
+        musicData.addIndonesianBand(arieWibowo);
+        musicData.addIndonesianBand(armada);
+        musicData.addIndonesianBand(atmosfera);
+        musicData.addIndonesianBand(bagindas);
+        musicData.addIndonesianBand(bernadya);
+        musicData.addIndonesianBand(bcl);
+        musicData.addIndonesianBand(dadali);
+        musicData.addIndonesianBand(dennyCaknan);
+        musicData.addIndonesianBand(dewa19);
+        musicData.addIndonesianBand(dhyoHaw);
+        musicData.addIndonesianBand(dmasiv);
+        musicData.addIndonesianBand(dygta);
+        musicData.addIndonesianBand(enau);
+        musicData.addIndonesianBand(felixIrwan);
+        musicData.addIndonesianBand(geisha);
+        musicData.addIndonesianBand(hijauDaun);
+        musicData.addIndonesianBand(hivi);
+        musicData.addIndonesianBand(iwanFals);
+        musicData.addIndonesianBand(jikustik);
+        musicData.addIndonesianBand(jRocks);
+        musicData.addIndonesianBand(juicyLuicy);
+        musicData.addIndonesianBand(kalebJ);
+        musicData.addIndonesianBand(lilO);
+        musicData.addIndonesianBand(maudyAyunda);
+        musicData.addIndonesianBand(ndxAka);
+        musicData.addIndonesianBand(nikitaWilly);
+        musicData.addIndonesianBand(nina);
+        musicData.addIndonesianBand(noah);
+        musicData.addIndonesianBand(once);
+        musicData.addIndonesianBand(ourStory);
+        musicData.addIndonesianBand(nyomanPaul);
+        musicData.addIndonesianBand(pamungkas);
+        musicData.addIndonesianBand(payungTeduh);
+        musicData.addIndonesianBand(playList);
+        musicData.addIndonesianBand(rossa);
+        musicData.addIndonesianBand(rumahSakit);
+        musicData.addIndonesianBand(ryanRapz);
+        musicData.addIndonesianBand(setiaBand);
+        musicData.addIndonesianBand(sevenTeen);
+        musicData.addIndonesianBand(sheilaOn7);
+        musicData.addIndonesianBand(theLantis);
+        musicData.addIndonesianBand(tipeX);
+        musicData.addIndonesianBand(triad);
+        musicData.addIndonesianBand(vierra);
+        musicData.addIndonesianBand(virgounAndLastChild);
+        musicData.addIndonesianBand(yovieAndNuno);
+        musicData.addIndonesianBand(zivilia);
+
+        const getCoreElement = (element, navIndex = 0) => {
+            const body = document.body;
+            const app = document.getElementById('app');
+            const nav = body.querySelectorAll('nav');
+            const main = body.querySelector('main');
+            const aside = body.querySelector('aside');
+            const footer = body.querySelector('footer');
+
+            if (element === 'body') {
+                return body;
+            } else if (element === 'app') {
+                return app;
+            } else if (element === 'nav') {
+                return nav[navIndex];
+            } else if (element === 'main') {
+                return main;
+            } else if (element === 'aside') {
+                return aside;
+            } else if (element === 'footer') {
+                return footer;
+            }
+        }
+        const createOffcanvasBody = (parentElement) => {
+            const createDivElement = document.createElement('div');
+            createDivElement.classList.add('offcanvas-body', 'w-100');
+            parentElement.appendChild(createDivElement);
+            return createDivElement;
+        }
+
+        const createOffcanvasPage = (parentElement, id, dNone = false) => {
+            const createDivElement = document.createElement('div');
+            createDivElement.classList.add('w-100');
+            if (dNone) createDivElement.classList.add('d-none');
+            createDivElement.setAttribute('id', id);
+            parentElement.appendChild(createDivElement);
+            return createDivElement;
+        };
+
+        const createAccordionFlush = (parentElement, id) => {
+            const accordion = document.createElement('div');
+            accordion.classList.add('accordion', 'accordion-flush', 'mt-0', 'mt-lg-4', 'mb-3');
+            accordion.setAttribute('id', id);
+            parentElement.appendChild(accordion);
+            return accordion;
+        };
+
+        const createAccordionItem = (parentElement) => {
+            const accordionItem = document.createElement('div');
+            accordionItem.classList.add('accordion-item', 'bg-black');
+            parentElement.appendChild(accordionItem);
+            return accordionItem;
+        };
+
+        const createAccordionHeader = (parentElement, targetId, textContent) => {
+            const accordionHeader = document.createElement('div');
+            accordionHeader.classList.add('accordion-header');
+            accordionHeader.innerHTML = `
+<button class="accordion-button collapsed bg-black" type="button"
+data-bs-toggle="collapse" data-bs-target="#${targetId}" aria-expanded="false" aria-controls="${targetId}">
+${textContent}
+</button>`;
+            parentElement.appendChild(accordionHeader);
+            return accordionHeader;
+        };
+
+        const createAccordionCollapse = (parentElement, id, dataBsParent) => {
+            const accordionCollapse = document.createElement('div');
+            accordionCollapse.classList.add('accordion-collapse', 'collapse');
+            accordionCollapse.setAttribute('id', id);
+            accordionCollapse.setAttribute('data-bs-parent', `#${dataBsParent}`);
+            parentElement.appendChild(accordionCollapse);
+            return accordionCollapse;
+        };
+
+        const createSongCard = (parentElement, songSrc, songTitle, singerName) => {
+            const card = document.createElement('button');
+            card.classList.add('card', 'w-100', 'text-start', 'btn', 'mb-0', 'p-0', 'border-0', 'bg-black');
+            card.setAttribute('data-songSrc', songSrc);
+
+            card.innerHTML = `
+<div class="row g-0 align-items-center w-100">
+<div class="col-1 text-center d-flex justify-content-center align-items-center">
+   <svg xmlns="http://www.w3.org/2000/svg" width="40px" height="40px" fill="currentColor" class="bi bi-vinyl-fill" viewBox="0 0 16 16">
+  <path d="M8 6a2 2 0 1 0 0 4 2 2 0 0 0 0-4m0 3a1 1 0 1 1 0-2 1 1 0 0 1 0 2"/>
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M4 8a4 4 0 1 0 8 0 4 4 0 0 0-8 0"/>
+</svg>
+</div>
+<div class="col-11 ps-0">
+    <div class="card-body">
+        <h6 class="card-title m-0 p-0 h6">${songTitle}</h6>
+        <p class="card-text m-0 p-0 text-body-tertiary">${singerName}</p>
+    </div>
+</div>
+</div>`;
+
+            parentElement.appendChild(card);
+            return card;
+        };
+
+        getCoreElement('nav', 1).addEventListener('click', (e) => {
+            let iframeElement = getCoreElement('main').querySelector('iframe');
+            const a = e.target.closest('a');
+            if (a && a.id === 'bi-play-fill') {
+                // Check if the widget is paused or playing
+                SC.Widget(iframeElement).isPaused(function (paused) {
+                    if (paused) {
+                        SC.Widget(iframeElement).play();
+                    } else {
+                        SC.Widget(iframeElement).pause();
+                    }
+                });
+            }
+        });
+
+
+        // 1. Inisialisasi array untuk menyimpan data lagu (penyanyi, album, judul, songSrc)
+        let songsData = [];
+        Object.keys(musicData).forEach((origin) => {
+            musicData[origin].forEach((singer) => {
+                singer.albums.forEach((album) => {
+                    album.songs.forEach((song) => {
+                        songsData.push({
+                            singer: singer.name,
+                            album: album.name,
+                            title: song.title,
+                            songSrc: song.songSrc
+                        });
+                    });
+                });
+            });
+        });
+
+        // 2. Menyimpan indeks lagu yang sedang diputar
+        let currentSongIndex = 0;
+
+        window.addEventListener('load', () => {
+            const offcanvasBody = createOffcanvasBody(getCoreElement('aside'));
+            const parentElementMusic = createOffcanvasPage(offcanvasBody, 'music-page', false);
+            const accordionMusic = createAccordionFlush(parentElementMusic, 'accordionMusicExample');
+            const accordionItemMusic = createAccordionItem(accordionMusic);
+
+            Object.keys(musicData).forEach((origin, originIndex) => {
+                musicData[origin].forEach((singer, singerIndex) => {
+                    const singerName = singer.name;
+                    const accordionHeaderMusic = createAccordionHeader(accordionItemMusic, `collapse-music-${originIndex}-${singerIndex}`, singerName);
+                    const accordionCollapseMusic = createAccordionCollapse(accordionItemMusic, `collapse-music-${originIndex}-${singerIndex}`, 'accordionMusicExample');
+
+                    singer.albums.forEach((album) => {
+                        album.songs.forEach((song) => {
+                            const songSrc = song.songSrc;
+                            const songTitle = song.title;
+
+                            createSongCard(accordionCollapseMusic, songSrc, `${singerName} - ${songTitle}`, album.name);
+
+                            getCoreElement('aside').addEventListener('click', (e) => {
+                                const button = e.target.closest('button');
+                                if (button && button.hasAttribute('data-songSrc')) {
+                                    const dataSongSrc = button.getAttribute('data-songSrc');
+                                    const songData = songsData.find(song => song.songSrc === dataSongSrc);
+                                    if (songData) {
+                                        const iframe = getCoreElement('main').querySelector('iframe');
+                                        const informationSong = iframe.nextElementSibling;
+                                        if (iframe) {
+                                            // Update currentSongIndex with the index of the songData
+                                            currentSongIndex = songsData.findIndex(song => song.songSrc === songData.songSrc);
+
+                                            // Memperbarui iframe dan informasi lagu yang sedang diputar terlebih dahulu
+                                            iframe.src = songData.songSrc;
+                                            informationSong.querySelector('h5').textContent = `${songData.singer} - ${songData.title}`;
+                                            informationSong.querySelector('h6').textContent = `${songData.album}`;
+                                            // Setelah iframe dan informasi diperbarui, baru memulai pemutaran lagu
+                                        } else {
+                                            console.error('Iframe not found!');
+                                        }
+                                    }
+                                }
+                            });
+                        });
+                    });
+                });
+            });
+
+            // 3. Fungsi untuk memperbarui src iframe dan informasi lagu yang sedang diputar
+            function updateIframeSource() {
+                const iframe = getCoreElement('main').querySelector('iframe');
+                const informationSong = iframe.nextElementSibling;
+                if (iframe && informationSong) {
+                    const songData = songsData[currentSongIndex];
+                    iframe.src = songData.songSrc;
+                    informationSong.querySelector('h5').textContent = `${songData.singer} - ${songData.title}`;
+                    informationSong.querySelector('h6').textContent = `${songData.album}`;
+                }
+            }
+
+            // 4. Fungsi untuk memilih lagu acak (baik sebelumnya ataupun berikutnya)
+            function randomSong() {
+                let nextSongIndex;
+                do {
+                    nextSongIndex = Math.floor(Math.random() * songsData.length);
+                } while (nextSongIndex === currentSongIndex);  // pastikan lagu yang dipilih tidak sama dengan yang sedang diputar
+                currentSongIndex = nextSongIndex;
+                updateIframeSource();
+            }
+
+            // 5. Tombol Rewind untuk beralih ke lagu sebelumnya (linear)
+            document.getElementById('bi-rewind-fill').addEventListener('click', () => {
+                currentSongIndex = (currentSongIndex === 0) ? songsData.length - 1 : currentSongIndex - 1;
+                updateIframeSource();
+            });
+
+            // 6. Tombol Fast Forward untuk beralih ke lagu berikutnya (linear)
+            document.getElementById('bi-fast-forward-fill').addEventListener('click', () => {
+                currentSongIndex = (currentSongIndex === songsData.length - 1) ? 0 : currentSongIndex + 1;
+                updateIframeSource();
+            });
+
+            // 7. Tombol Skip Backward untuk beralih ke lagu acak sebelumnya
+            document.getElementById('bi-skip-backward-fill').addEventListener('click', randomSong);
+
+            // 8. Tombol Skip Forward untuk beralih ke lagu acak berikutnya
+            document.getElementById('bi-skip-forward-fill').addEventListener('click', randomSong);
+
+            // 9. Memuat lagu pertama saat halaman dimuat pertama kali
+            randomSong();
+        });
+    </script>
 </body>
 
 </html>
