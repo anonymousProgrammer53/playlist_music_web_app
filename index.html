@@ -1900,7 +1900,7 @@
                     const songData = songsData[currentSongIndex];
                     getIframe().src = songData.songSrc;
                     getInformationSong().titleSong.textContent = `${songData.singer} - ${songData.title}`;
-                    getInformationSong().albumName = `${songData.album}`;
+                    getInformationSong().albumName.textContent = `${songData.album}`;
                 }
             }
 
